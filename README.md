@@ -130,7 +130,7 @@ end)
     local Main = Window:NewTab("PvP")
     local PvPSection = Main:NewSection("PvP")
 
-    PvPSection:NewButton("Noslow", "Za Za veloce veloce", function()
+    PvPSection:NewButton("Noslow", "Sciaffi Tremonici" function()
         (getgenv()).noslow = true;
         
         repeat
@@ -157,7 +157,7 @@ end)
         
             end)
 
-    PvPSection:NewButton("Dragon Trow Glich", "Dragon Trow Glich", function()
+    PvPSection:NewButton("Dragon Throw Glich", "Dragon Throw Glich", function()
         local player = game.Players.LocalPlayer
         local Character = player.character
         while wait(0.3) do
@@ -250,6 +250,77 @@ end)
 	end)
 
 
+    local Main = Window:NewTab("Character")
+    local CharacterSection = Main:NewSection("Character")
+
+    CharacterSection:NewButton("Hide LvL", "Hide ur Hide LvL", function()
+        if not game:IsLoaded() then
+			game.Loaded:Wait()
+			end
+			wait(2)
+			game.Players.LocalPlayer.Character:FindFirstChildOfClass("Model"):Destroy()
+    end)
+
+    CharacterSection:NewButton("Hide Wings", "Hide ur Wings", function()
+                
+
+getgenv().enabler = true  
+
+
+if (not game:IsLoaded()) then
+    game.Loaded:Wait();
+end;
+local lplr=game:GetService('Players').LocalPlayer;
+local char=game:GetService('Workspace'):waitForChild('Live'):waitForChild(lplr.Name);
+function xd(char)
+    lmfao=false;
+    if (getgenv().enabler==false) then
+        ran:Disconnect();
+    else
+        repeat wait();
+            if (char:findFirstChild('RebirthWings')) then
+                x=char.HumanoidRootPart.CFrame.X;
+                y=char.HumanoidRootPart.CFrame.Y;
+                z=char.HumanoidRootPart.CFrame.Z;
+                char.HumanoidRootPart.CFrame=CFrame.new(x,y,z) + Vector3.new(0,-200,0);
+                char.RebirthWings.Handle.AccessoryWeld:Destroy();
+                char.HumanoidRootPart.CFrame=CFrame.new(x,y,z);
+                x,y,z=nil;
+                char.RebirthWings:Destroy();
+                lmfao=true;
+            end;
+            if (char:findFirstChild('RealHalo')) then
+                x=char.HumanoidRootPart.CFrame.X;
+                y=char.HumanoidRootPart.CFrame.Y;
+                z=char.HumanoidRootPart.CFrame.Z;
+                char.HumanoidRootPart.CFrame=CFrame.new(x,y,z) + Vector3.new(0,-200,0);
+                char.RealHalo.Handle.AccessoryWeld:Destroy();
+                char.HumanoidRootPart.CFrame=CFrame.new(x,y,z);
+                x,y,z=nil;
+                char.RealHalo:Destroy();
+                lmfao=true;
+            end;
+        until lmfao==true or getgenv().enabler==false;
+    end;
+end;
+repeat wait()
+    for i,v in pairs(char:getChildren()) do
+        if v:IsA('Model') then
+            lmao=true;
+            xd(char);
+            break;
+        end;
+    end;
+until lmao==true;
+lmao=false;
+lplr.CharacterRemoving:connect(function() lmfao=true;end);
+lplr.CharacterAdded:connect(function(v)
+    char=v;
+    xd(char);
+    print('reconnected');
+end);
+    end)
+
 
 
     local Main = Window:NewTab("Info")
@@ -263,4 +334,14 @@ end)
     InfoSection:NewKeybind("Hide Farmer Hub", "Hide Farmer Hub", Enum.KeyCode.RightAlt, function()
         Library:ToggleUI()
     end)
+
+
+    local OtherSection = Main:NewSection("Other Scripts")
+
+    OtherSection:NewButton("1tsJustHub", "Use 1tsJustHub", function()
+        --1tsJustHub
+
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/gp1tsJust/1tsJustHub-V2-DBZ/main/README.md"), true))()
+    end)
+
 
