@@ -130,7 +130,7 @@ end)
     local Main = Window:NewTab("PvP")
     local PvPSection = Main:NewSection("PvP")
 
-    PvPSection:NewButton("Noslow", "Sciaffi Tremonici" function()
+    PvPSection:NewButton("Noslow", "Sciaffi Tremonici", function()
         (getgenv()).noslow = true;
         
         repeat
@@ -341,7 +341,8 @@ end);
     OtherSection:NewButton("1tsJustHub", "Use 1tsJustHub", function()
         --1tsJustHub
 
-loadstring(game:HttpGet(("https://raw.githubusercontent.com/gp1tsJust/1tsJustHub-V2-DBZ/main/README.md"), true))()
+        loadstring(game:HttpGet(("https://raw.githubusercontent.com/gp1tsJust/1tsJustHub-V2-DBZ/main/README.md"), true))()
     end)
+
 
 
