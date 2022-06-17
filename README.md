@@ -1,6 +1,30 @@
 wait (0.8)
 
 game.StarterGui:SetCore("SendNotification", {
+    Title = "Whitlist System";
+    Text = "Whitlist System";
+    Duration = "15";
+    })
+
+local HWIDTable = loadstring(game:HttpGet(("https://pastebin.com/raw/KrgrAkVt"), true))()
+local HWID = game:GetService("RbxAnalyticsService"):GetClientId()
+print(HWIDTable)
+for i,v in pairs(HWIDTable) do
+    if v == HWID then
+        
+
+
+            wait(2.1)
+
+            game.StarterGui:SetCore("SendNotification", {
+                Title = "Whitlist System";
+                Text = "TROLL u are in Whitlist";
+                Duration = "15";
+                })
+
+                wait (1)
+
+game.StarterGui:SetCore("SendNotification", {
     Title = "Ur a nice farmer?";
     Text = "Let's see!";
     Duration = "15";
@@ -346,3 +370,16 @@ end);
 
 
 
+
+    else
+
+        wait(1.5)
+
+        game.StarterGui:SetCore("SendNotification", {
+            Title = "Whitlist System";
+            Text = "U not whitlisted";
+            Duration = "15";
+            })
+
+    end
+end
